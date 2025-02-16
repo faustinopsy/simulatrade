@@ -7,10 +7,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 export default function App() {
     const nav = true ? createBottomTabNavigator() : createDrawerNavigator();
     return (
-        <NavigationContainer>
-            <nav.Navigator>
-                <nav.Screen name="Home" component={HomeScreen}></nav.Screen>
-                <nav.Screen name="Simulador" component={Simulador}></nav.Screen>
+        <NavigationContainer >
+            <nav.Navigator >
+                <nav.Screen name="Home" component={HomeScreen} options={{title: 'Inicial',
+                headerStyle: {
+                backgroundColor: 'teal',
+             },}}>
+
+          </nav.Screen>
+                <nav.Screen name="Simulador" component={Simulador} options={{title: 'Simulador',}}></nav.Screen>
             </nav.Navigator>
         </NavigationContainer>
     )
